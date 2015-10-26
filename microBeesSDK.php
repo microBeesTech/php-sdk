@@ -16,7 +16,10 @@ class microBees {
 		$json_response = curl_exec($curl);
 		curl_close($curl);
 		$response = json_decode($json_response, true);
+		if(!isset($response->error))
 		$token = $json_response->access_token;
+		if($debug)
+			print_r($json_response);
 	};
 	
 } 
